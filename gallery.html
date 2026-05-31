@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore bridal, Arabic, Dubai, Indian, and baby shower mehndi designs by Mehwish Mehndi Studio." />
+    <title>Gallery | Mehwish Mehndi Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Mehwish Mehndi Studio home">
+        <span class="brand-mark">M</span>
+        <span><strong>Mehwish</strong><small>Mehndi Studio</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Open navigation</span>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a class="nav-current" href="gallery.html">Gallery</a>
+        <a href="index.html#about">Our Story</a>
+        <a href="index.html#contact">Contact</a>
+        <a class="button button-small" href="index.html#booking">Book a Session</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="gallery-page-hero">
+        <p class="eyebrow">The Mehwish portfolio</p>
+        <h1>Every pattern holds<br /><em>a little story.</em></h1>
+        <p>
+          Browse the details, find the style that feels like you, and bring your
+          favorites along when we plan your session.
+        </p>
+      </section>
+
+      <section class="full-gallery section-padding">
+        <div class="gallery-filter-heading">
+          <div>
+            <p class="eyebrow">Find your inspiration</p>
+            <h2 class="section-title">Explore the <em>designs.</em></h2>
+          </div>
+          <p class="gallery-count"><span id="visible-count">12</span> designs</p>
+        </div>
+
+        <div class="gallery-filters" aria-label="Filter gallery designs">
+          <button class="filter-button active" type="button" data-filter="all">All Designs</button>
+          <button class="filter-button" type="button" data-filter="arabic">Arabic</button>
+          <button class="filter-button" type="button" data-filter="dubai">Dubai</button>
+          <button class="filter-button" type="button" data-filter="bridal">Bridal</button>
+          <button class="filter-button" type="button" data-filter="indian">Indian</button>
+          <button class="filter-button" type="button" data-filter="baby-shower">Baby Shower</button>
+        </div>
+
+        <div class="full-gallery-grid">
+          <article class="gallery-item gallery-item-tall" data-category="bridal">
+            <div><span>Bridal</span><h3>Heirloom details</h3></div>
+          </article>
+          <article class="gallery-item" data-category="arabic">
+            <div><span>Arabic</span><h3>Flowing florals</h3></div>
+          </article>
+          <article class="gallery-item" data-category="dubai">
+            <div><span>Dubai</span><h3>Modern grace</h3></div>
+          </article>
+          <article class="gallery-item gallery-item-tall" data-category="indian">
+            <div><span>Indian</span><h3>Classic celebration</h3></div>
+          </article>
+          <article class="gallery-item" data-category="baby-shower">
+            <div><span>Baby Shower</span><h3>Sweet beginnings</h3></div>
+          </article>
+          <article class="gallery-item" data-category="bridal">
+            <div><span>Bridal</span><h3>A bride's story</h3></div>
+          </article>
+          <article class="gallery-item" data-category="arabic">
+            <div><span>Arabic</span><h3>Soft vines</h3></div>
+          </article>
+          <article class="gallery-item gallery-item-tall" data-category="dubai">
+            <div><span>Dubai</span><h3>Statement lines</h3></div>
+          </article>
+          <article class="gallery-item" data-category="indian">
+            <div><span>Indian</span><h3>Tradition in bloom</h3></div>
+          </article>
+          <article class="gallery-item" data-category="baby-shower">
+            <div><span>Baby Shower</span><h3>A new chapter</h3></div>
+          </article>
+          <article class="gallery-item" data-category="bridal">
+            <div><span>Bridal</span><h3>Wedding day</h3></div>
+          </article>
+          <article class="gallery-item" data-category="arabic">
+            <div><span>Arabic</span><h3>Delicate rhythm</h3></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="gallery-page-cta">
+        <p class="eyebrow">Found your inspiration?</p>
+        <h2 class="section-title">Let us create something<br /><em>personal to you.</em></h2>
+        <a class="button" href="index.html#booking">Reserve Your Date</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="index.html">
+        <span class="brand-mark">M</span>
+        <span><strong>Mehwish</strong><small>Mehndi Studio</small></span>
+      </a>
+      <p>Bespoke mehndi artistry for life's beautiful moments.</p>
+      <div class="footer-links">
+        <a href="https://instagram.com">Instagram</a>
+        <a href="https://wa.me/910000000000">WhatsApp</a>
+        <a href="mailto:hello@mehwishmehndi.com">Email</a>
+      </div>
+      <small>&copy; <span id="year"></span> Mehwish Mehndi Studio. Made with intention.</small>
+    </footer>
+    <script src="gallery.js"></script>
+  </body>
+</html>
