@@ -28,9 +28,20 @@ navigation.querySelectorAll("a").forEach((link) => {
 
 bookingForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  formMessage.textContent =
-    "Thank you. Your enquiry is ready to send once we connect the booking backend.";
-  bookingForm.reset();
+
+  const formData = new FormData(bookingForm);
+  const message = [
+    "Assalamu alaikum, I would like to book a mehndi session.",
+    "",
+    `Name: ${formData.get("name")}`,
+    `Email: ${formData.get("email")}`,
+    `Celebration type: ${formData.get("event")}`,
+    `Preferred date: ${formData.get("date")}`,
+    `Message: ${formData.get("message") || "Not added"}`,
+  ].join("\n");
+
+  formMessage.textContent = "Opening WhatsApp with your booking enquiry...";
+  window.open(`https://wa.me/910000000000?text=${encodeURIComponent(message)}`, "_blank");
 });
 
 function showTestimonial(index) {
