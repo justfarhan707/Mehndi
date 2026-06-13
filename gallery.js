@@ -89,7 +89,7 @@ const categoryLabels = {
   party: "Party",
 };
 
-const whatsappNumber = "919923350240";
+const whatsappNumber = "917843059055";
 
 function getDesignName(image, index) {
   return `${categoryLabels[image.category]} design ${index + 1}`;
