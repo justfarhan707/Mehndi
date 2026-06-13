@@ -1,0 +1,21 @@
+{
+  "name": "mehwish-video-studio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "remotion studio",
+    "render:bridal": "remotion render BridalPromo out/bridal-promo.mp4",
+    "render": "npm run render:bridal"
+  },
+  "dependencies": {
+    "@remotion/cli": "latest",
+    "remotion": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "typescript": "latest"
+  }
+}
