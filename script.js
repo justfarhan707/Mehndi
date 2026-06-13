@@ -31,7 +31,7 @@ bookingForm.addEventListener("submit", (event) => {
 
   const formData = new FormData(bookingForm);
   const message = [
-    "Assalamu alaikum, I would like to book a mehndi session.",
+    "Hello!!!, I would like to book a mehndi session.",
     "",
     `Name: ${formData.get("name")}`,
     `Email: ${formData.get("email")}`,
