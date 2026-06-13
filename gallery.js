@@ -89,23 +89,54 @@ const categoryLabels = {
   party: "Party",
 };
 
+const whatsappNumber = "919923350240";
+
+function getDesignName(image, index) {
+  return `${categoryLabels[image.category]} design ${index + 1}`;
+}
+
+function getDesignBookingLink(designName) {
+  const message = `Heyy, I am interested in this "${designName}"`;
+  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
+
+function getAbsoluteImageUrl(src) {
+  return new URL(src, window.location.href).href;
+}
+
+function contactForDesign(index) {
+  const image = currentImages[index];
+  const designName = getDesignName(image, index);
+  const message = [
+    `Heyy, I am interested in this "${designName}".`,
+    `Design image: ${getAbsoluteImageUrl(image.src)}`,
+  ].join("\n");
+
+  window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
+}
+
 function renderGallery(selectedCategory = "all") {
   currentImages = galleryImages.filter(
     (image) => selectedCategory === "all" || image.category === selectedCategory
   );
 
   galleryGrid.innerHTML = currentImages
-    .map(
-      (image, index) => `
+    .map((image, index) => {
+      const designName = getDesignName(image, index);
+
+      return `
         <article class="gallery-item" data-category="${image.category}" data-index="${index}" tabindex="0">
-          <img src="${image.src}" alt="${categoryLabels[image.category]} mehndi design ${index + 1}" loading="lazy" />
+          <img src="${image.src}" alt="${designName}" loading="lazy" />
           <div>
             <span>${categoryLabels[image.category]}</span>
-            <h3>${categoryLabels[image.category]} design</h3>
+            <h3>${designName}</h3>
+            <button class="gallery-book-button" type="button" data-index="${index}">
+              Send this design
+            </button>
           </div>
         </article>
-      `
-    )
+      `;
+    })
     .join("");
 
   visibleCount.textContent = currentImages.length;
@@ -139,8 +170,8 @@ function openLightbox(index) {
   const image = currentImages[currentLightboxIndex];
 
   lightboxImage.src = image.src;
-  lightboxImage.alt = `${categoryLabels[image.category]} mehndi design`;
-  lightboxCaption.textContent = `${categoryLabels[image.category]} design`;
+  lightboxImage.alt = getDesignName(image, currentLightboxIndex);
+  lightboxCaption.textContent = getDesignName(image, currentLightboxIndex);
   lightbox.classList.add("open");
   document.body.classList.add("no-scroll");
 }
@@ -180,6 +211,13 @@ filterButtons.forEach((button) => {
 });
 
 galleryGrid.addEventListener("click", (event) => {
+  const shareButton = event.target.closest(".gallery-book-button");
+  if (shareButton) {
+    event.stopPropagation();
+    contactForDesign(Number(shareButton.dataset.index));
+    return;
+  }
+
   const item = event.target.closest(".gallery-item");
   if (!item) return;
   openLightbox(Number(item.dataset.index));
@@ -187,6 +225,8 @@ galleryGrid.addEventListener("click", (event) => {
 
 galleryGrid.addEventListener("keydown", (event) => {
   if (event.key !== "Enter" && event.key !== " ") return;
+  if (event.target.closest(".gallery-book-button")) return;
+
   const item = event.target.closest(".gallery-item");
   if (!item) return;
   event.preventDefault();

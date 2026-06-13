@@ -223,30 +223,9 @@ h1 { font-size: clamp(63px, 6.1vw, 103px); }
   inset: 0;
   position: absolute;
 }
-.reel-card img { transition: opacity 0.35s ease, transform 0.55s ease; }
-.reel-card:hover img { opacity: 0.86; transform: scale(1.06); }
+.reel-video { display: block; height: 100%; object-fit: cover; transition: opacity 0.35s ease, transform 0.55s ease; width: 100%; }
+.reel-card:hover .reel-video { opacity: 0.9; transform: scale(1.04); }
 .reel-card-raised { transform: none; }
-.reel-play {
-  align-items: center;
-  backdrop-filter: blur(5px);
-  background: rgba(255, 253, 248, 0.2);
-  border: 1px solid rgba(255, 253, 248, 0.75);
-  border-radius: 50%;
-  color: var(--paper);
-  display: flex;
-  font-size: 18px;
-  height: 66px;
-  justify-content: center;
-  left: 50%;
-  padding-left: 4px;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  transition: 0.25s ease;
-  width: 66px;
-  z-index: 2;
-}
-.reel-card:hover .reel-play { background: var(--terracotta); border-color: var(--terracotta); transform: translate(-50%, -50%) scale(1.1); }
 .reel-overlay { bottom: 0; color: var(--paper); left: 0; padding: 25px; position: absolute; right: 0; z-index: 2; }
 .reel-overlay p { font-family: var(--serif); font-size: 33px; line-height: 1; margin: 0 0 8px; }
 .reel-overlay span { color: #f1d9b9; font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
@@ -339,6 +318,7 @@ blockquote { font-family: var(--serif); font-size: clamp(31px, 3.3vw, 50px); lin
 .booking-copy > p:not(.eyebrow) { max-width: 520px; }
 .contact-note { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 22px; }
 .contact-note span { display: block; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+.contact-note p { color: #765f54; margin: 10px 0 12px; max-width: 430px; }
 .contact-note a { color: var(--terracotta); font-family: var(--serif); font-size: 28px; }
 .booking-contact { display: grid; gap: 18px; grid-template-columns: 1.05fr 0.95fr; }
 .booking-form { background: var(--paper); display: grid; gap: 18px; grid-template-columns: repeat(2, 1fr); padding: 36px; }
@@ -432,6 +412,22 @@ input:focus, select:focus, textarea:focus { border-color: var(--terracotta); }
 .gallery-item span { color: #f1d9b9; font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
 .gallery-item h3 { font-size: 31px; margin: 2px 0 0; }
 .gallery-item { cursor: zoom-in; }
+.gallery-book-button {
+  background: rgba(255, 253, 248, 0.92);
+  border: 0;
+  color: var(--brown);
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  margin-top: 12px;
+  padding: 10px 13px;
+  text-transform: uppercase;
+  transition: 0.2s ease;
+}
+.gallery-book-button:hover { background: var(--terracotta); color: var(--paper); }
 .lightbox {
   align-items: center;
   background: rgba(46, 29, 23, 0.92);
@@ -553,6 +549,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--terracotta); }
   .gallery-item, .gallery-item:nth-child(6n + 1), .gallery-item:nth-child(6n + 4) { aspect-ratio: 4 / 5; }
   .gallery-item div { padding: 13px; }
   .gallery-item h3 { font-size: 23px; }
+  .gallery-book-button { font-size: 8px; margin-top: 8px; padding: 8px 10px; }
   .lightbox { padding: 22px 5vw 72px; }
   .lightbox-frame { max-width: 100%; }
   .lightbox-arrow { bottom: 18px; top: auto; transform: none; }

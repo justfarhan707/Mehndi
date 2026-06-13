@@ -41,7 +41,7 @@ bookingForm.addEventListener("submit", (event) => {
   ].join("\n");
 
   formMessage.textContent = "Opening WhatsApp with your booking enquiry...";
-  window.open(`https://wa.me/910000000000?text=${encodeURIComponent(message)}`, "_blank");
+  window.open(`https://wa.me/919923350240?text=${encodeURIComponent(message)}`, "_blank");
 });
 
 function showTestimonial(index) {
